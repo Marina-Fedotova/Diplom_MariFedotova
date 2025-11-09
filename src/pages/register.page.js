@@ -11,8 +11,6 @@ export class RegisterPage {
 	}
 	// бизнесовые действия со страницой
 	async register(user) {
-		return test.step(`Зарегистрироваться пользователем ${user.name} c email ${user.email} и паролем ${user.password}`, async (step) => {
-            await this.signupLink.click();
 		const { name, email, password } = user;
 		await this.nameInput.click();
 		await this.nameInput.fill(name);
@@ -21,7 +19,5 @@ export class RegisterPage {
 		await this.passwordInput.click();
 		await this.passwordInput.fill(password);
 		await this.signupButton.click();
-	});
 	}
-
 }
