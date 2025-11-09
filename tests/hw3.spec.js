@@ -4,7 +4,7 @@ import { MainPage, RegisterPage, ArticlePage, EditorPage } from '../src/pages/in
 
 const URL = 'https://realworld.qa.guru/';
 
-test.describe.only('Регистрация', () => {
+test.describe('Регистрация', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(URL);
   });
