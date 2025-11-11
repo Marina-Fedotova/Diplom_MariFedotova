@@ -6,8 +6,9 @@
   "scripts": {
     "test": "npx playwright test",
     "testUI": "npx playwright test --ui",
-    "report": "npx playwright show-report",
-    "allureFile": "npx allure awesome ./allure-results --single-file",
+    "reportAwesome": "npx allure awesome ./allure-results --single-file",
+    "reportClassic": "npx allure classic ./allure-results --single-file",
+    "report": "allure generate ./allure-results -o ./allure-report && allure open ./allure-report",
     "test:api": "npx playwright test --grep @Api"
   },
   "keywords": [],
