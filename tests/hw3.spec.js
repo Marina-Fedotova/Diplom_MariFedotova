@@ -9,7 +9,7 @@ test.describe('Регистрация', () => {
     await page.goto(URL);
   });
 
-  test('Пользователь может зарегистрироваться', async ({page}) => {
+  test('Пользователь может зарегистрироваться',{ tag: '@UI'}, async ({page}) => {
     const user = {
       name: faker.person.fullName(),
       email: faker.internet.email(),
@@ -26,7 +26,7 @@ test.describe('Регистрация', () => {
     );
   });
 
-test('Пользователь может добавить новую статью', async ({page}) => {
+test('Пользователь может добавить новую статью',{ tag: '@UI'}, async ({page}) => {
   const user = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
@@ -50,7 +50,7 @@ test('Пользователь может добавить новую стать
 });
 
 
-test('Пользователь может опубликовать комментарий', async ({page}) => {
+test('Пользователь может опубликовать комментарий',{ tag: '@UI'}, async ({page}) => {
   const user = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
@@ -77,7 +77,7 @@ test('Пользователь может опубликовать коммен�
   await expect(articlePage.articleCheck).toContainText(article.coment);
 });
 
-test('Пользователь может изменить статью', async ({page}) => {
+test('Пользователь может изменить статью',{ tag: '@UI'}, async ({page}) => {
   const user = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
@@ -102,7 +102,7 @@ test('Пользователь может изменить статью', async 
   await expect(articlePage.articleCheck).toContainText(article.title);
 });
 
-test('Пользователь в профиле видит свою статью', async ({page}) => {
+test('Пользователь в профиле видит свою статью',{ tag: '@UI'}, async ({page}) => {
   const user = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
@@ -128,7 +128,7 @@ test('Пользователь в профиле видит свою стать�
   await expect(articlePage.myArticle).toContainText(article.title);
 });
 
-test('Пользователь может перейти на таб "Favorited Articles"', async ({page}) => {
+test('Пользователь может перейти на таб "Favorited Articles"',{ tag: '@UI'}, async ({page}) => {
   const user = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
