@@ -138,7 +138,7 @@ jobs:
           msg+="❌ Упали: *$FAILED*%0A"
           msg+="⏭️ Пропущено: *$SKIPPED*%0A"
           msg+="%0A━━━━━━━━━━━━━━━━━%0A"
-          msg+="🔗 [Отчёт Allure](https://github.com/Marina-Fedotova/Diplom_MariFedotova/)%0A"
+          msg+="🔗 [Отчёт Allure](https://marina-fedotova.github.io/Diplom_MariFedotova/)%0A"
           msg+="🧪 [TestOps](https://allure.autotests.cloud/project/4997)%0A"
           msg+="📦 [Артефакты]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)%0A"
           msg+="%0A🏷️ *Запуск #${{ github.run_number }}*"
