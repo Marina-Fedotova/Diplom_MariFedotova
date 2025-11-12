@@ -47,7 +47,7 @@
 
 ## 📊 Allure-отчёт
 
-[👉 Посмотреть отчёт](https://github.com/Marina-Fedotova/Diplom_MariFedotova)
+[👉 Посмотреть отчёт](https://marina-fedotova.github.io/Diplom_MariFedotova/)
 
 ![Allure Report](images_report/allure-report.png)
 
