@@ -3,7 +3,7 @@ import { test as baseTest }  from '../../src/helpers/fixtures/fixture';
 import { UserBuilder, ArticleBuilder } from "../../src/helpers/builders/index.js";
 const test = baseTest;
 
-test.describe.only('Регистрация', () => {
+test.describe('Регистрация', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
