@@ -23,10 +23,11 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    baseURL: 'https://realworld.qa.guru',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
-    apiURL : 'https://apichallenges.herokuapp.com',
+    api : 'https://apichallenges.herokuapp.com',
   },
 
   /* Configure projects for major browsers */
@@ -34,9 +35,8 @@ export default defineConfig({
     {
       name: 'API Tests',
       testMatch: 'api/**/*.spec.js',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://apichallenges.herokuapp.com',
+      use: {...devices['Desktop Chrome'],
+        //baseURL: 'https://apichallenges.herokuapp.com',
       },
     },
     {
@@ -44,7 +44,7 @@ export default defineConfig({
       testMatch: 'ui/**/*.spec.js',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://realworld.qa.guru/',
+        //baseURL: 'https://realworld.qa.guru/',
       },
     },
   ],

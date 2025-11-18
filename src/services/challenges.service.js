@@ -1,8 +1,20 @@
-import axios from "axios";
-
-let URL = 'https://apichallenges.herokuapp.com/';
+import { test } from "@playwright/test";
 
 export class ChallengesService {
-    constructor (options){this.options = options;}
-    async get(headers){const response = await axios.get(`${URL}challenges`, {headers: headers});return response;}
+  constructor(request) {
+    this.request = request;
+  }
+
+  async get(token, testinfo) {
+    return test.step("GET /challenges", async () => {
+      const r = await this.request.get(
+        `${testinfo.project.use.api}/challenges`,
+        {
+          headers: { "X-CHALLENGER": token },
+        },
+      );
+      const body = await r.json();
+      return body;
+    });
+  }
 }

@@ -9,6 +9,9 @@ export class ArticlePage {
         this.tags = page.getByRole('textbox', { name: 'Enter tags' });
         this.buttonPublish = page.getByText('Publish Article');
         this.articleCheck = page.getByRole('main');
+        //this.articleTitle = page.locator("h1");
+        this.articleText = page.locator("div.col-md-12 p");
+        this.articleTags = page.locator("ul.tag-list li.tag-default.tag-pill.tag-outline");
       
         //profile
         this.userProfile = page.locator('.user-pic');
