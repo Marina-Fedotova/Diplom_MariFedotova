@@ -1,6 +1,15 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+const { BASE_URL, API_URL, CI } = process.env;
+
+const baseUrls = {
+  PROD: 'https://realworld.qa.guru'
+ };
+ const apiUrls = {
+  PROD: 'https://apichallenges.herokuapp.com'
+ };
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -23,11 +32,11 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://realworld.qa.guru',
+    baseURL: BASE_URL || baseUrls.PROD,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
-    api : 'https://apichallenges.herokuapp.com',
+    api: API_URL || apiUrls.PROD,
   },
 
   /* Configure projects for major browsers */
@@ -36,7 +45,6 @@ export default defineConfig({
       name: 'API Tests',
       testMatch: 'api/**/*.spec.js',
       use: {...devices['Desktop Chrome'],
-        //baseURL: 'https://apichallenges.herokuapp.com',
       },
     },
     {
@@ -44,7 +52,6 @@ export default defineConfig({
       testMatch: 'ui/**/*.spec.js',
       use: {
         ...devices['Desktop Chrome'],
-        //baseURL: 'https://realworld.qa.guru/',
       },
     },
   ],
